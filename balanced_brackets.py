@@ -4,8 +4,28 @@
 #
 # The function is expected to return a STRING.
 # The function accepts STRING brackets as parameter.
+
+
+open_list = ["[","{","("] 
+close_list = ["]","}",")"] 
+
+
 def isBalanced(brackets):
-    # Write your code here
+    listBrackets = [] 
+    for item in brackets: 
+        if item in open_list: 
+            listBrackets.append(item) 
+        elif item in close_list: 
+            pos = close_list.index(item) 
+            if ((len(listBrackets) > 0) and
+                (open_list[pos] == listBrackets[len(listBrackets)-1])): 
+                listBrackets.pop() 
+            else: 
+                return "NO"
+    if len(listBrackets) == 0: 
+        return "YES"
+    else: 
+        return "NO"
 
 
 if __name__ == '__main__':
