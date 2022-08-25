@@ -28,6 +28,11 @@ def isBalanced(brackets):
         return "NO"
 
 
+# print(isBalanced('{[()]}'))
+# print(isBalanced('{[(])}'))
+# print(isBalanced('{{[[(())]]}}'))
+
+
 if __name__ == '__main__':
 
     t = int(input().strip())
